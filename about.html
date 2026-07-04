@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami | Rempeyek Bumi</title>
+    <meta name="description" content="Kisah, visi, misi, dan komitmen keberlanjutan Rempeyek Bumi dalam menyajikan produk ramah lingkungan tanpa limbah.">
+    <meta name="keywords" content="Tentang Rempeyek Bumi, Sejarah Rempeyek Bumi, Visi Misi Kuliner Berkelanjutan, UMKM Hijau">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/188/188333.png'">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-globe-americas text-accent me-2"></i>
+                <span class="fw-bold">Rempeyek <span style="color: var(--accent-color);">Bumi</span></span>
+            </a>
+            
+            <div class="d-flex align-items-center d-lg-none gap-2">
+                <!-- Dark Mode Toggle Mobile -->
+                <button class="theme-toggle-btn" id="themeToggleMobile" onclick="document.getElementById('themeToggle').click()" aria-label="Toggle Theme">
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sustainability.html">Sustainability</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sustainability.html#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Dark Mode Toggle Desktop -->
+                    <li class="nav-item d-none d-lg-block ms-2 me-3">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-nav-order" href="product.html">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Hero style but shorter) -->
+    <header class="hero-section" style="background-image: url('img/hero-bg.png'); height: 60vh; min-height: 400px;">
+        <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(27, 94, 32, 0.9) 0%, rgba(18, 27, 19, 0.8) 100%);"></div>
+        <div class="container text-center hero-content">
+            <span class="section-tag text-white bg-success px-3 py-1 rounded-pill mb-3 fs-7" style="--bs-bg-opacity: .35;">
+                Kenali Kami Lebih Dekat 🍃
+            </span>
+            <h1 class="hero-title" style="font-size: 3rem;">Tentang Rempeyek Bumi</h1>
+            <p class="hero-desc mx-auto" style="max-width: 600px; font-size: 1.05rem;">
+                Misi kami adalah menyajikan kenikmatan kuliner warisan leluhur secara sehat sekaligus berkontribusi nyata menjaga kelestarian ekosistem bumi kita.
+            </p>
+        </div>
+    </header>
+
+    <!-- Vision & Mission Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center mb-5 pb-lg-4">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0 fade-up-element">
+                    <img src="img/about-chef.png" alt="Filosofi Kami" class="img-fluid rounded-4 shadow" style="width: 100%; height: 350px; object-fit: cover;">
+                </div>
+                <div class="col-lg-6 order-lg-1 fade-up-element justify">
+                    <span class="section-tag">Filosofi</span>
+                    <h2 class="section-title text-start">Mengapa Kami Memulai Gerakan Ini?</h2>
+                    <p class="mb-4">
+                        Rempeyek Bumi lahir di Sleman, D.I. Yogyakarta pada awal tahun 2024. Diawali oleh sekelompok ibu rumah tangga dan pemuda peduli lingkungan, kami melihat bahwa cemilan tradisional rempeyek yang sangat digemari masyarakat sering kali dikaitkan dengan masalah penggunaan minyak jelantah berulang kali yang tidak sehat, serta kemasan plastik sekali pakai yang menggunung.
+                    </p>
+                    <p class="mb-0">
+                        Kami memutuskan untuk meredefinisi industri cemilan tradisional dengan menghadirkan <strong>"A Zero Waste Culinary Digital Experience"</strong>. Kami mengintegrasikan teknologi digital untuk memantau produksi, meminimalkan limbah, serta memasarkan produk berkualitas tinggi ini langsung dari pedesaan ke seluruh pelosok tanah air.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Vision Mission Boxes -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 fade-up-element">
+                    <div class="choose-card" style="text-align: left; padding: 40px;">
+                        <div class="choose-icon-wrapper" style="margin: 0 0 20px 0;">
+                            <i class="bi bi-eye-fill"></i>
+                        </div>
+                        <h4 class="mb-3">Visi Kami</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.7;">
+                            Menjadi pelopor produk kuliner tradisional berkelanjutan skala nasional yang menyelaraskan kelezatan cita rasa otentik, kesehatan konsumen, dan kelestarian ekologi bumi.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-up-element">
+                    <div class="choose-card" style="text-align: left; padding: 40px;">
+                        <div class="choose-icon-wrapper" style="margin: 0 0 20px 0; background-color: rgba(212, 160, 23, 0.1); color: var(--accent-color);">
+                            <i class="bi bi-rocket-takeoff-fill"></i>
+                        </div>
+                        <h4 class="mb-3">Misi Kami</h4>
+                        <p class="text-muted mb-0" style="font-size: 0.95rem; line-height: 1.7;">
+                            1. Menyajikan rempeyek sehat tanpa bahan pengawet dengan standar higienis dan nutrisi tinggi.<br>
+                            2. Menerapkan sistem zero waste di seluruh rantai pasok untuk meminimalkan jejak karbon.<br>
+                            3. Memberdayakan petani lokal dan UMKM pedesaan dengan kemitraan perdagangan yang adil.<br>
+                            4. Mengedukasi masyarakat mengenai gaya hidup minim limbah melalui produk kami.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Farmers Partnership Section -->
+    <section class="section-padding bg-cream-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-up-element">
+                    <div class="pe-lg-4">
+                        <span class="section-tag">Kemitraan Lokal</span>
+                        <h2 class="section-title text-start">Mendukung Petani Lokal & UMKM Nusantara</h2>
+                        <p class="mb-4 text-muted">
+                            Kunci dari cita rasa gurih yang istimewa dari Rempeyek Bumi terletak pada kesegaran bahan baku. Kami menjalin kemitraan erat dengan lebih dari 20 petani lokal Sleman dan UMKM bumbu di Yogyakarta.
+                        </p>
+                        
+                        <div class="d-flex align-items-start gap-3 mb-3">
+                            <div class="about-icon-wrapper bg-white shadow-sm" style="font-size: 1.25rem;">
+                                <i class="bi bi-check2-circle text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Harga Beli yang Adil (Fair Trade)</h6>
+                                <p class="text-muted mb-0 fs-7">Kami menjamin pembelian bahan baku dengan harga adil yang mendukung kesejahteraan ekonomi petani.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start gap-3 mb-3">
+                            <div class="about-icon-wrapper bg-white shadow-sm" style="font-size: 1.25rem;">
+                                <i class="bi bi-check2-circle text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Bahan Segar Tanpa Rantai Distribusi Panjang</h6>
+                                <p class="text-muted mb-0 fs-7">Kacang tanah, bawang putih, kemiri, kencur, dan daun jeruk dipetik langsung hari ini untuk diproduksi besok pagi.</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="about-icon-wrapper bg-white shadow-sm" style="font-size: 1.25rem;">
+                                <i class="bi bi-check2-circle text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Edukasi Pertanian Organik</h6>
+                                <p class="text-muted mb-0 fs-7">Kami memberikan pupuk organik dari pengolahan kompos limbah rempeyek kembali ke petani untuk pertanian berkelanjutan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 fade-up-element">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <img src="img/prod-kacang.png" alt="Bahan Kacang Tanah" class="img-fluid rounded-3 shadow-sm mb-3" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=300&q=80'">
+                            <img src="img/prod-daunjeruk.png" alt="Daun Jeruk Segar" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 260px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                        <div class="col-6">
+                            <img src="img/prod-udang.png" alt="Udang Rebon Segar" class="img-fluid rounded-3 shadow-sm mb-3" style="width: 100%; height: 260px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=300&q=80'">
+                            <img src="img/prod-teri.png" alt="Teri Nasi Premium" class="img-fluid rounded-3 shadow-sm" style="width: 100%; height: 200px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1534080391025-a7c065f41ae1?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sourcing-to-Waste Process Timeline Section -->
+    <section class="section-padding timeline-section" id="process">
+        <div class="container text-center">
+            <span class="section-tag">Proses Berkelanjutan</span>
+            <h2 class="section-title">Alur Hidup Rempeyek Bumi</h2>
+            <p class="section-desc">
+                Bagaimana kami mendesain rantai produksi tertutup yang berkelanjutan dan minim jejak karbon.
+            </p>
+
+            <!-- Timeline -->
+            <div class="timeline mt-5">
+                <!-- Step 1 -->
+                <div class="timeline-item timeline-left fade-up-element">
+                    <div class="timeline-content">
+                        <h4>1. Pemilihan Bahan Lokal</h4>
+                        <p>Bahan rempah-rempah segar dan kacang pilihan dikirim setiap pagi langsung dari kebun mitra tani kami di kaki Gunung Merapi secara organik.</p>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="timeline-item timeline-right fade-up-element">
+                    <div class="timeline-content">
+                        <h4>2. Produksi Minim Limbah</h4>
+                        <p>Adonan diaduk dengan takaran presisi menggunakan teknologi hemat energi. Sisa kulit bawang dan batang sereh difermentasikan menjadi pupuk cair cair organik.</p>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="timeline-item timeline-left fade-up-element">
+                    <div class="timeline-content">
+                        <h4>3. Kemasan Ramah Lingkungan</h4>
+                        <p>Mengemas produk dengan bio-plastik pati singkong biodegradable yang diproteksi tas kertas kraft FSC yang kokoh tanpa perekat lem kimia berlebih.</p>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="timeline-item timeline-right fade-up-element">
+                    <div class="timeline-content">
+                        <h4>4. Distribusi Efisien</h4>
+                        <p>Menggunakan rute logistik teroptimasi digital untuk mengurangi jejak karbon kendaraan ekspedisi dan kotak kardus bekas higienis bersertifikat daur ulang.</p>
+                    </div>
+                </div>
+                <!-- Step 5 -->
+                <div class="timeline-item timeline-left fade-up-element">
+                    <div class="timeline-content">
+                        <h4>5. Daur Ulang Mandiri</h4>
+                        <p>Sisa minyak goreng disetor ke bank sampah setempat untuk biodiesel, dan ampas sisa bahan bakar kompor diolah menjadi briket arang ramah lingkungan.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="sustainability.html" class="btn btn-primary-custom">Pelajari Lebih Dalam</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand" href="index.html">
+                        <i class="bi bi-globe-americas text-accent me-2"></i>
+                        <span>Rempeyek <span style="color: var(--accent-color);">Bumi</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        Pelopor cemilan tradisional berkelanjutan yang lezat, sehat, dan diproduksi secara bertanggung jawab demi kelestarian bumi nusantara.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right me-1"></i> About Us</a></li>
+                        <li><a href="product.html"><i class="bi bi-chevron-right me-1"></i> Products</a></li>
+                        <li><a href="sustainability.html"><i class="bi bi-chevron-right me-1"></i> Sustainability</a></li>
+                        <li><a href="sustainability.html#gallery"><i class="bi bi-chevron-right me-1"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Jam Operasional</h5>
+                    <ul class="footer-links" style="color: rgba(244, 235, 208, 0.7);">
+                        <li class="d-flex justify-content-between"><span>Senin - Jumat:</span> <span>08.00 - 17.00</span></li>
+                        <li class="d-flex justify-content-between"><span>Sabtu:</span> <span>09.00 - 15.00</span></li>
+                        <li class="d-flex justify-content-between"><span>Minggu:</span> <span class="text-danger">Tutup</span></li>
+                        <li class="mt-3">
+                            <span class="d-block fw-bold text-white">Alamat Workshop:</span>
+                            Jl. Lestari Hijau No. 45, Sleman, D.I. Yogyakarta
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Hubungi Kami</h5>
+                    <ul class="footer-links">
+                        <li><a href="tel:+6281234567890"><i class="bi bi-telephone-fill me-2 text-accent"></i> +62 812-3456-7890</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank"><i class="bi bi-whatsapp me-2 text-accent"></i> WhatsApp Chat</a></li>
+                        <li><a href="mailto:info@rempeyekbumi.com"><i class="bi bi-envelope-fill me-2 text-accent"></i> info@rempeyekbumi.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 Rempeyek Bumi. All Rights Reserved. Designed for a Green Future 🌿</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Scroll Back to Top">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float" aria-label="Contact via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap 5 Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

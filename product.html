@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk | Rempeyek Bumi</title>
+    <meta name="description" content="Jelajahi berbagai pilihan rempeyek premium sehat: Rempeyek Kacang, Teri, Udang, Daun Jeruk, Vegan, dan Pedas yang ramah lingkungan.">
+    <meta name="keywords" content="Produk Rempeyek Bumi, Rempeyek Kacang, Rempeyek Teri, Rempeyek Vegan, Cemilan Sehat Tradisional">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png" onerror="this.src='https://cdn-icons-png.flaticon.com/512/188/188333.png'">
+
+    <!-- Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-globe-americas text-accent me-2"></i>
+                <span class="fw-bold">Rempeyek <span style="color: var(--accent-color);">Bumi</span></span>
+            </a>
+            
+            <div class="d-flex align-items-center d-lg-none gap-2">
+                <!-- Dark Mode Toggle Mobile -->
+                <button class="theme-toggle-btn" id="themeToggleMobile" onclick="document.getElementById('themeToggle').click()" aria-label="Toggle Theme">
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sustainability.html">Sustainability</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sustainability.html#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- Dark Mode Toggle Desktop -->
+                    <li class="nav-item d-none d-lg-block ms-2 me-3">
+                        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Theme">
+                            <i class="bi bi-moon-stars-fill"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn-nav-order" href="product.html">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="hero-section" style="background-image: url('img/hero-bg.png'); height: 50vh; min-height: 350px;">
+        <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(27, 94, 32, 0.9) 0%, rgba(18, 27, 19, 0.8) 100%);"></div>
+        <div class="container text-center hero-content">
+            <span class="section-tag text-white bg-success px-3 py-1 rounded-pill mb-3 fs-7" style="--bs-bg-opacity: .35;">
+                Pilihan Rasa Alami 🍃
+            </span>
+            <h1 class="hero-title" style="font-size: 2.75rem;">Katalog Sehat & Lezat</h1>
+            <p class="hero-desc mx-auto" style="max-width: 600px; font-size: 1.05rem;">
+                Setiap resep dikembangkan tanpa bahan kimia tambahan dan diproses secara berkelanjutan.
+            </p>
+        </div>
+    </header>
+
+    <!-- Product Grid & Search Section -->
+    <section class="section-padding" id="catalog">
+        <div class="container">
+            <!-- Search & Filters Container -->
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <!-- Search Input -->
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden border">
+                        <span class="input-group-text bg-white border-0 ps-4 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-0 py-3 ps-2 text-dark" id="productSearch" placeholder="Cari varian rempeyek sehat favorit Anda...">
+                    </div>
+                </div>
+                <div class="col-lg-12 mt-4 text-center">
+                    <!-- Categories badges -->
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <button class="product-filter-btn active" data-filter="all">Semua Varian</button>
+                        <button class="product-filter-btn" data-filter="traditional">Tradisional</button>
+                        <button class="product-filter-btn" data-filter="seafood">Seafood</button>
+                        <button class="product-filter-btn" data-filter="vegan">Vegan / Hijau</button>
+                        <button class="product-filter-btn" data-filter="spicy">Pedas Gurih</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State Message -->
+            <div id="noProductsMessage" class="text-center py-5" style="display: none;">
+                <i class="bi bi-emoji-frown text-muted" style="font-size: 3rem;"></i>
+                <h4 class="mt-3 fw-bold">Varian Tidak Ditemukan</h4>
+                <p class="text-muted">Cobalah mencari kata kunci lain atau pilih filter kategori yang berbeda.</p>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4" id="productGrid">
+                
+                <!-- 1. Rempeyek Kacang -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="traditional">
+                        <div class="product-img-container">
+                            <span class="product-badge">Best Seller</span>
+                            <img src="img/prod-kacang.png" alt="Rempeyek Kacang" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-2 fs-7">(4.9)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Kacang</h3>
+                            <p class="product-desc">Cemilan renyah dengan taburan kacang tanah organik yang tebal dan aroma kencur serta bawang putih segar pedesaan.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 15.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-kacang">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Kacang', 'Rp 15.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Rempeyek Teri -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="seafood">
+                        <div class="product-img-container">
+                            <span class="product-badge">Favorit</span>
+                            <img src="img/prod-teri.png" alt="Rempeyek Teri" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1534080391025-a7c065f41ae1?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                                <span class="text-muted ms-2 fs-7">(4.7)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Teri</h3>
+                            <p class="product-desc">Perpaduan teri nasi premium dari nelayan lokal dengan adonan krispi yang gurih gurih asin gurih alami.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 18.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-teri">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Teri', 'Rp 18.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Rempeyek Udang -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="seafood">
+                        <div class="product-img-container">
+                            <span class="product-badge">Premium</span>
+                            <img src="img/prod-udang.png" alt="Rempeyek Udang" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-2 fs-7">(4.8)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Udang</h3>
+                            <p class="product-desc">Sensasi gurih renyah udang rebon air tawar utuh yang melimpah, digoreng kering tanpa sisa minyak jelantah.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 20.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-udang">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Udang', 'Rp 20.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Rempeyek Daun Jeruk -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="vegan">
+                        <div class="product-img-container">
+                            <span class="product-badge">Aromatik</span>
+                            <img src="img/prod-daunjeruk.png" alt="Rempeyek Daun Jeruk" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-2 fs-7">(5.0)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Daun Jeruk</h3>
+                            <p class="product-desc">Adonan gurih beraroma daun jeruk purut organik segar yang dirajang halus, memberikan kesegaran rasa aromatik alami.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 14.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-daunjeruk">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Daun Jeruk', 'Rp 14.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Rempeyek Vegan -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="vegan">
+                        <div class="product-img-container">
+                            <span class="product-badge">Eco Friendly</span>
+                            <img src="img/prod-vegan.png" alt="Rempeyek Vegan" class="product-img" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <span class="text-muted ms-2 fs-7">(4.9)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Vegan</h3>
+                            <p class="product-desc">Dibuat menggunakan sari pati bayam organik, daun kelor, emulsi biji rami (flaxseed), tanpa telur maupun kaldu hewani.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 17.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-vegan">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Vegan', 'Rp 17.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Rempeyek Pedas -->
+                <div class="col product-col">
+                    <div class="product-card" data-category="spicy">
+                        <div class="product-img-container">
+                            <span class="product-badge">Spicy</span>
+                            <img src="img/prod-pedas.png" alt="Rempeyek Pedas" class="product-img" style="filter: sepia(0.15) saturate(1.7) hue-rotate(-20deg);" onerror="this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-body">
+                            <div class="product-rating">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                                <span class="text-muted ms-2 fs-7">(4.6)</span>
+                            </div>
+                            <h3 class="product-title text-dark dark-text-light">Rempeyek Pedas</h3>
+                            <p class="product-desc">Adonan pedas gurih dengan irisan cabai rawit merah pedesaan, dipadu kacang tanah renyah. Sangat cocok bagi pecinta pedas.</p>
+                            <div class="product-footer">
+                                <span class="product-price">Rp 16.000</span>
+                                <div class="d-flex gap-2">
+                                    <button class="btn-product-detail" data-bs-toggle="modal" data-bs-target="#modal-pedas">Detail</button>
+                                    <button class="btn-product-order" onclick="orderProductViaWhatsApp('Rempeyek Pedas', 'Rp 16.000')"><i class="bi bi-whatsapp"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals untuk Detail Produk -->
+    <!-- Modal 1: Kacang -->
+    <div class="modal fade" id="modal-kacang" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Kacang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-kacang.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Varian paling digemari sepanjang masa. Dibuat dengan resep otentik warisan Sleman dengan kacang pilihan.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 230 Kkal</td><td>Karbohidrat: 24 g</td></tr>
+                        <tr><td>Protein: 6 g</td><td>Lemak Jenuh: 1.5 g (Rendah)</td></tr>
+                        <tr><td>Natrium: 120 mg</td><td>Serat: 2 g</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras Organik, Tepung Sagu, Kacang Tanah Organik, Kemiri, Bawang Putih, Daun Jeruk Purut, Kencur, Minyak Kelapa Organik, Garam Himalaya.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Biodegradable Cassava Bag (dalam)<br><i class="bi bi-check2 text-success me-1"></i> FSC-Certified Recycled Kraft paper bag (luar)</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Kacang', 'Rp 15.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Teri -->
+    <div class="modal fade" id="modal-teri" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Teri</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-teri.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1534080391025-a7c065f41ae1?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Cemilan kaya kalsium dengan rasa asin gurih natural dari ikan teri nasi segar laut selatan Jawa.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 220 Kkal</td><td>Karbohidrat: 22 g</td></tr>
+                        <tr><td>Protein: 8 g (Kaya Kalsium)</td><td>Lemak Jenuh: 1.6 g</td></tr>
+                        <tr><td>Natrium: 150 mg</td><td>Kalsium: 110 mg</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras, Tepung Sagu, Ikan Teri Nasi Pilihan, Telur Bebek Kampung, Bawang Putih, Ketumbar, Garam Himalaya, Minyak Kelapa Organik.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Kantong cassava alami mudah terurai<br><i class="bi bi-check2 text-success me-1"></i> Paper box daur ulang ramah lingkungan</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Teri', 'Rp 18.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Udang -->
+    <div class="modal fade" id="modal-udang" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Udang</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-udang.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Rasa udang rebon kering yang garing berpadu dengan ketumbar organik. Aroma udangnya sangat wangi dan gurih.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 240 Kkal</td><td>Karbohidrat: 23 g</td></tr>
+                        <tr><td>Protein: 7 g</td><td>Lemak Jenuh: 1.8 g</td></tr>
+                        <tr><td>Natrium: 140 mg</td><td>Zat Besi: 1.2 mg</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras Organik, Udang Rebon Kering Pilihan, Telur Bebek, Bawang Putih, Ketumbar Bubuk Organik, Minyak Kelapa Organik, Garam Laut Alami.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Tas kertas kraft ramah bumi<br><i class="bi bi-check2 text-success me-1"></i> Bio-seal cassava pelindung kerenyahan</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Udang', 'Rp 20.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Daun Jeruk -->
+    <div class="modal fade" id="modal-daunjeruk" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Daun Jeruk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-daunjeruk.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Cita rasa aromatik khas daun jeruk purut organik, disajikan tipis, tanpa tambahan lauk pauk protein hewani.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 190 Kkal (Rendah Kalori)</td><td>Karbohidrat: 24 g</td></tr>
+                        <tr><td>Protein: 3 g</td><td>Lemak Jenuh: 0.9 g</td></tr>
+                        <tr><td>Natrium: 95 mg (Rendah Natrium)</td><td>Vitamin C: 4 mg</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras, Daun Jeruk Purut Segar, Kemiri, Bawang Putih, Kaldu Jamur Alami (Non-MSG), Minyak Kelapa Organik, Garam Himalaya.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Bio-cassava seal zero plastic<br><i class="bi bi-check2 text-success me-1"></i> Eco FSC paper bag</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Daun Jeruk', 'Rp 14.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Vegan -->
+    <div class="modal fade" id="modal-vegan" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Vegan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-vegan.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Cemilan ramah bumi yang dibuat khusus tanpa telur maupun susu. Menggunakan bubuk kelor dan bayam untuk klorofil alami yang menyehatkan.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 180 Kkal</td><td>Karbohidrat: 22 g</td></tr>
+                        <tr><td>Protein: 4 g</td><td>Lemak Jenuh: 0.8 g</td></tr>
+                        <tr><td>Natrium: 90 mg</td><td>Klorofil & Antioksidan: Tinggi</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras Merah Organik, Ekstrak Bayam Organik, Bubuk Kelor Sleman, Biji Rami, Biji Wijen Organik, Bawang Putih, Kencur, Minyak Kelapa Organik, Garam Laut.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Bio-cassava seal zero plastic<br><i class="bi bi-check2 text-success me-1"></i> Eco FSC paper bag</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Vegan', 'Rp 17.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Pedas -->
+    <div class="modal fade" id="modal-pedas" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: var(--card-bg);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-success"><i class="bi bi-leaf-fill me-2"></i>Rempeyek Pedas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4">
+                    <img src="img/prod-pedas.png" class="img-fluid rounded-3 mb-3 w-100" style="height: 220px; object-fit: cover; filter: sepia(0.15) saturate(1.7) hue-rotate(-20deg);" onerror="this.src='https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=500&q=80'">
+                    <p class="text-muted fs-7">Rasa pedas membakar yang pas, berpadu dengan kerenyahan kacang tanah. Menggunakan cabai rawit pedesaan yang dikeringkan secara alami.</p>
+                    
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Informasi Nilai Gizi (Per 50g)</h6>
+                    <table class="table table-sm table-borderless text-muted fs-7">
+                        <tr><td>Energi: 235 Kkal</td><td>Karbohidrat: 24 g</td></tr>
+                        <tr><td>Protein: 5.5 g</td><td>Lemak Jenuh: 1.6 g</td></tr>
+                        <tr><td>Natrium: 130 mg</td><td>Capsaicin: Tinggi</td></tr>
+                    </table>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Komposisi Alami</h6>
+                    <p class="text-muted fs-7 mb-0">Tepung Beras, Cabai Merah Kering Giling, Cabai Rawit Cincang, Kacang Tanah Organik, Bawang Putih, Kemiri, Kencur, Daun Jeruk, Minyak Kelapa Organik, Garam Laut.</p>
+
+                    <h6 class="fw-bold mt-3 text-dark dark-text-light">Kemasan Berkelanjutan</h6>
+                    <p class="text-muted fs-7 mb-0"><i class="bi bi-check2 text-success me-1"></i> Bio-cassava bag dalam<br><i class="bi bi-check2 text-success me-1"></i> Eco FSC paper bag luar</p>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom py-2 px-4" onclick="orderProductViaWhatsApp('Rempeyek Pedas', 'Rp 16.000')">Pesan Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="footer-brand" href="index.html">
+                        <i class="bi bi-globe-americas text-accent me-2"></i>
+                        <span>Rempeyek <span style="color: var(--accent-color);">Bumi</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        Pelopor cemilan tradisional berkelanjutan yang lezat, sehat, dan diproduksi secara bertanggung jawab demi kelestarian bumi nusantara.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://instagram.com" target="_blank" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="bi bi-chevron-right me-1"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bi bi-chevron-right me-1"></i> About Us</a></li>
+                        <li><a href="product.html"><i class="bi bi-chevron-right me-1"></i> Products</a></li>
+                        <li><a href="sustainability.html"><i class="bi bi-chevron-right me-1"></i> Sustainability</a></li>
+                        <li><a href="sustainability.html#gallery"><i class="bi bi-chevron-right me-1"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="bi bi-chevron-right me-1"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Jam Operasional</h5>
+                    <ul class="footer-links" style="color: rgba(244, 235, 208, 0.7);">
+                        <li class="d-flex justify-content-between"><span>Senin - Jumat:</span> <span>08.00 - 17.00</span></li>
+                        <li class="d-flex justify-content-between"><span>Sabtu:</span> <span>09.00 - 15.00</span></li>
+                        <li class="d-flex justify-content-between"><span>Minggu:</span> <span class="text-danger">Tutup</span></li>
+                        <li class="mt-3">
+                            <span class="d-block fw-bold text-white">Alamat Workshop:</span>
+                            Jl. Lestari Hijau No. 45, Sleman, D.I. Yogyakarta
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Hubungi Kami</h5>
+                    <ul class="footer-links">
+                        <li><a href="tel:+6281234567890"><i class="bi bi-telephone-fill me-2 text-accent"></i> +62 812-3456-7890</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank"><i class="bi bi-whatsapp me-2 text-accent"></i> WhatsApp Chat</a></li>
+                        <li><a href="mailto:info@rempeyekbumi.com"><i class="bi bi-envelope-fill me-2 text-accent"></i> info@rempeyekbumi.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 Rempeyek Bumi. All Rights Reserved. Designed for a Green Future 🌿</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Scroll Back to Top">
+        <i class="bi bi-arrow-up-short"></i>
+    </button>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="whatsapp-float" aria-label="Contact via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer"></div>
+
+    <!-- Bootstrap 5 Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

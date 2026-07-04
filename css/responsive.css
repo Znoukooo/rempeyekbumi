@@ -1,0 +1,251 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - Rempeyek Bumi
+   ========================================================================= */
+
+/* --- Large Devices (Desktops, under 1200px) --- */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .about-img {
+        height: 420px;
+    }
+}
+
+/* --- Medium Devices (Tablets/Laptops, under 992px) --- */
+@media (max-width: 991.98px) {
+    .navbar {
+        background-color: var(--glass-bg) !important;
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        box-shadow: 0 4px 30px var(--glass-shadow);
+        border-bottom: 1px solid var(--glass-border);
+        padding: 12px 0;
+    }
+    
+    .navbar-brand {
+        color: var(--primary-color) !important;
+    }
+    
+    .navbar-brand img {
+        height: 35px;
+    }
+    
+    .nav-link {
+        color: var(--text-color) !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2846, 125, 50, 0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .theme-toggle-btn {
+        color: var(--text-color);
+        justify-content: flex-start;
+        padding: 10px 0;
+    }
+    
+    .btn-nav-order {
+        margin-top: 15px;
+        background-color: var(--primary-color);
+        text-align: center;
+        display: block;
+    }
+    
+    /* Hero */
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.35rem;
+    }
+    
+    .hero-desc {
+        font-size: 1.05rem;
+    }
+
+    /* About Section */
+    .about-img-wrapper {
+        margin-bottom: 50px;
+    }
+    
+    .about-img {
+        height: 380px;
+        max-width: 550px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .about-experience-badge {
+        right: 10%;
+    }
+
+    /* Timeline Stack */
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        margin-bottom: 30px;
+    }
+    
+    .timeline-item::after {
+        left: 11px;
+        right: auto;
+    }
+    
+    .timeline-right {
+        left: 0%;
+    }
+    
+    .timeline-right::after {
+        left: 11px;
+    }
+    
+    /* Stats */
+    .stats-card {
+        margin-bottom: 30px;
+    }
+    
+    .stats-section .row > div:last-child .stats-card {
+        margin-bottom: 0;
+    }
+    
+    /* Newsletter */
+    .newsletter-card {
+        padding: 45px 25px;
+    }
+}
+
+/* --- Small Devices (Tablets, under 768px) --- */
+@media (max-width: 767.98px) {
+    .section-padding {
+        padding: 70px 0;
+    }
+    
+    .section-title {
+        font-size: 2.15rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.15rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .btn-primary-custom, 
+    .btn-secondary-custom {
+        padding: 12px 24px;
+        justify-content: center;
+    }
+    
+    .about-experience-badge {
+        padding: 15px 20px;
+        bottom: -15px;
+        right: 5%;
+    }
+    
+    .about-experience-badge h3 {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-item {
+        height: 230px;
+    }
+    
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+/* --- Extra Small Devices (Phones, under 576px) --- */
+@media (max-width: 575.98px) {
+    .section-title {
+        font-size: 1.85rem;
+    }
+    
+    .about-img {
+        height: 300px;
+    }
+    
+    .about-experience-badge {
+        position: static;
+        margin-top: 20px;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+    }
+    
+    .newsletter-form .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .newsletter-input {
+        border-radius: 30px !important;
+        text-align: center;
+    }
+    
+    .btn-newsletter {
+        border-radius: 30px !important;
+        padding: 12px 0;
+        width: 100%;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .sticky-order-bar .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .sticky-order-bar .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
