@@ -340,3 +340,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// === 12. Fix Bootstrap Carousel TypeError ===
+const testimonialCarouselEl = document.getElementById('testimonialCarousel');
+if (testimonialCarouselEl && window.bootstrap) {
+    // Paksa definisi opsi 'ride' agar tidak bernilai undefined
+    new bootstrap.Carousel(testimonialCarouselEl, {
+        ride: 'carousel',
+        interval: 5000 // Mengatur durasi slide otomatis (5 detik)
+    });
+}
