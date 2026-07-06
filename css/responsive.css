@@ -208,17 +208,19 @@
     
     .newsletter-form .input-group {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
+        background: transparent; /* Menghapus warna red debug */
     }
     
     .newsletter-input {
-        border-radius: 30px !important;
+        width: 100% !important;
+        border-radius: 30px !important; /* Membuat sudut membulat sempurna di mobile */
         text-align: center;
     }
     
     .btn-newsletter {
-        border-radius: 30px !important;
-        padding: 12px 0;
+        border-radius: 30px !important; /* Membuat tombol membulat sempurna di mobile */
+        padding: 14px 0;
         width: 100%;
     }
     

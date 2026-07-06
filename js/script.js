@@ -106,11 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", isDark ? "dark" : "light");
             updateThemeIcon(isDark);
             
-            showToast(
-                isDark ? "Dark Mode Aktif" : "Light Mode Aktif",
-                isDark ? "Nuansa malam yang ramah mata berhasil diaktifkan." : "Nuansa segar terang berhasil diaktifkan.",
-                "success"
-            );
+            // showToast(
+            //     isDark ? "Dark Mode Aktif" : "Light Mode Aktif",
+            //     isDark ? "Nuansa malam yang ramah mata berhasil diaktifkan." : "Nuansa segar terang berhasil diaktifkan.",
+            //     "success"
+            // );
         });
     }
 

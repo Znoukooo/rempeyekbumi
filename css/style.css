@@ -302,7 +302,7 @@ ul {
     font-weight: 800;
     letter-spacing: -1px;
     margin-bottom: 10px;
-    background: linear-gradient(to right, #FFFFFF, var(--secondary-color));
+    background: linear-gradient(to right, #FFFFFF, var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -589,6 +589,14 @@ body.dark-theme .about-icon-card p {
 
 .product-title {
     font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transition: var(--transition-fast);
+}
+body.dark-theme .product-title {
+    font-size: 1.25rem;
+    color: white !important;
+    opacity: 0.8;
     font-weight: 700;
     margin-bottom: 10px;
     transition: var(--transition-fast);
@@ -1111,6 +1119,11 @@ body.dark-theme .contact-info-item p {
 
 body.dark-theme .form-control {
     background-color: #111a12;
+    
+}
+body.dark-theme .form-control::placeholder {
+    color: white !important;
+    opacity: 0.6;
 }
 
 body.dark-theme .form-control:focus {
@@ -1246,6 +1259,18 @@ body.dark-theme .form-control:focus {
     border-radius: 50%;
     background-color: rgba(244, 235, 208, 0.08);
     color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: var(--transition-fast);
+}
+body.dark-theme .social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(244, 235, 208, 0.08);
+    color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
