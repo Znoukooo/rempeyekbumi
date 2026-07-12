@@ -280,21 +280,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     if (contactForm) {
         contactForm.addEventListener("submit", (e) => {
+            // 1. Tahan browser agar tidak refresh halaman
             e.preventDefault();
             
-            // Basic Bootstrap validation styling
+            // 2. Cek validasi bootstrap terlebih dahulu
             if (!contactForm.checkValidity()) {
                 e.stopPropagation();
                 contactForm.classList.add("was-validated");
                 return;
             }
-
+    
+            // 3. Ambil data asli yang diinput oleh user di form Anda
             const name = document.getElementById("contactName").value;
+            const email = document.getElementById("contactEmail").value;
+            const phone = document.getElementById("contactPhone").value;
+            const message = document.getElementById("contactMessage").value;
+    
+            // 4. Atur Nomor WhatsApp Anda (Gunakan kode negara, misal 62 untuk Indonesia)
+            const nomorWA = "6282123438174"; // <-- GANTI DENGAN NOMOR WHATSAPP ANDA SENDIRI!
+    
+            // 5. Susun teks format pesan otomatisnya
+            const teksPesan = `Halo Rempeyek Bumi 🍃\n\nAda pesan baru dari formulir kontak:\n• *Nama Lengkap:* ${name}\n• *Alamat Email:* ${email}\n• *Nomor HP/WA:* ${phone}\n• *Isi Pesan:* ${message}`;
+            
+            // 6. Buka tab baru menuju WhatsApp dengan pesan otomatis tersebut
+            const waUrl = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`;
+            window.open(waUrl, "_blank");
+    
+            // 7. Tampilkan toast pemberitahuan sukses ke user & bersihkan form
             showToast(
-                "Pesan Terkirim!",
-                `Terima kasih <strong>${name}</strong>, pesan Anda telah kami terima. Kami akan segera menghubungi Anda kembali!`,
+                "Mengarahkan ke WhatsApp",
+                `Terima kasih <strong>${name}</strong>, chat WhatsApp akan segera terbuka untuk mengirim pesan Anda.`,
                 "success"
             );
+            
             contactForm.reset();
             contactForm.classList.remove("was-validated");
         });
@@ -350,3 +368,22 @@ if (testimonialCarouselEl && window.bootstrap) {
         interval: 5000 // Mengatur durasi slide otomatis (5 detik)
     });
 }
+
+// Logic placeholder saat fokus pada Form Floating
+const floatingInputs = document.querySelectorAll('.form-floating .form-control');
+
+floatingInputs.forEach(input => {
+    const exampleText = input.getAttribute('data-placeholder');
+    
+    if (exampleText) {
+        // Saat form diklik / fokus, tampilkan contoh teks
+        input.addEventListener('focus', () => {
+            input.setAttribute('placeholder', exampleText);
+        });
+        
+        // Saat kursor keluar, kosongkan lagi agar label bisa turun dengan rapi
+        input.addEventListener('blur', () => {
+            input.setAttribute('placeholder', ' ');
+        });
+    }
+});

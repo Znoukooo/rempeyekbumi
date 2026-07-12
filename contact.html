@@ -117,29 +117,32 @@
                         <form id="contactForm" novalidate>
                             <!-- Nama -->
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="contactName" placeholder="Nama Lengkap" required minlength="3">
+                                <input type="text" class="form-control" id="contactName" placeholder=" " data-placeholder="Contoh: Budi Santoso" required minlength="3">
                                 <label for="contactName">Nama Lengkap</label>
                                 <div class="invalid-feedback">Silakan masukkan nama lengkap minimal 3 karakter.</div>
                             </div>
+                            
                             <!-- Email -->
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="contactEmail" placeholder="nama@email.com" required>
+                                <input type="email" class="form-control" id="contactEmail" placeholder=" " data-placeholder="Contoh: budi@gmail.com" required>
                                 <label for="contactEmail">Alamat Email</label>
                                 <div class="invalid-feedback">Silakan masukkan alamat email yang valid.</div>
                             </div>
+                            
                             <!-- No HP -->
                             <div class="form-floating mb-3">
-                                <input type="tel" class="form-control" id="contactPhone" placeholder="0812xxxxxx" required pattern="^[0-9]{9,14}$">
+                                <input type="tel" class="form-control" id="contactPhone" placeholder=" " data-placeholder="Contoh: 08123456789" required pattern="^[0-9]{9,14}$">
                                 <label for="contactPhone">Nomor WhatsApp / HP</label>
                                 <div class="invalid-feedback">Silakan masukkan nomor telepon yang valid (9-14 digit angka).</div>
                             </div>
+                            
                             <!-- Pesan -->
                             <div class="form-floating mb-4">
-                                <textarea class="form-control" id="contactMessage" placeholder="Pesan Anda..." style="height: 150px" required minlength="10"></textarea>
+                                <textarea class="form-control" id="contactMessage" placeholder=" " data-placeholder="Tuliskan pertanyaan Anda di sini minimal 10 karakter..." style="height: 150px" required minlength="10"></textarea>
                                 <label for="contactMessage">Pesan Anda...</label>
                                 <div class="invalid-feedback">Silakan ketik pesan minimal 10 karakter.</div>
                             </div>
-                            <!-- Button Submit -->
+                            
                             <button type="submit" class="btn btn-primary-custom w-100 py-3">Kirim Pesan</button>
                         </form>
                     </div>

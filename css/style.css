@@ -1532,3 +1532,16 @@ body.dark-theme .apalagi{
     color: var(--text-color) !important;
     opacity: 0.7 !important;
 }
+
+/* Warna contoh placeholder saat form aktif */
+.form-control:focus::placeholder {
+    color: #aaaaaa !important;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Penyesuaian warna untuk tema gelap jika aktif */
+body.dark-theme .form-control:focus::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.5;
+}
