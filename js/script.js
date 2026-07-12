@@ -340,7 +340,7 @@ if (contactForm) {
     // === 11. WhatsApp Order Handler ===
     // This intercepts detail button orders or floating button order triggers
     window.orderProductViaWhatsApp = function(productName, price) {
-        const phoneNumber = "6281234567890"; // Dummy green-business WA phone number
+        const phoneNumber = "6282123438174"; // Dummy green-business WA phone number
         const textTemplate = `Halo Rempeyek Bumi 🍃\nSaya tertarik dengan produk *${productName}* (Harga: ${price}).\nMohon informasi cara pemesanan dan pengirimannya. Terima kasih!`;
         const encodedText = encodeURIComponent(textTemplate);
         const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
