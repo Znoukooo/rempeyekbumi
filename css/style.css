@@ -1545,3 +1545,22 @@ body.dark-theme .form-control:focus::placeholder {
     color: var(--text-muted) !important;
     opacity: 0.5;
 }
+
+/* ==========================================================================
+   Kustomisasi Warna Teks Header Toast (Light & Dark Mode)
+   ========================================================================== */
+
+/* Default / Light Mode: Mengubah teks "Baru saja" dan teks small di sebelahnya menjadi hitam */
+.toast-header .smallnya_nih,
+.toast-header small {
+    color: #000000 !important;
+    opacity: 0.8; /* Memberikan sedikit kelembutan warna agar tidak terlalu pekat */
+    transition: color var(--transition-slow);
+}
+
+/* Dark Mode: Mengubah teks "Baru saja" dan teks small di sebelahnya menjadi putih */
+body.dark-theme .toast-header .smallnya_nih,
+body.dark-theme .toast-header small {
+    color: #FFFFFF !important;
+    opacity: 0.8;
+}

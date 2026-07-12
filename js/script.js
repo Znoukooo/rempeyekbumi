@@ -138,8 +138,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <div id="${toastId}" class="toast toast-custom ${borderClass}" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="4000">
                 <div class="toast-header border-0 bg-transparent">
                     <i class="bi ${iconClass} me-2 fs-5"></i>
-                    <strong class="me-auto text-dark dark-text-light">${title}</strong>
-                    <small class="text-muted">Baru saja</small>
+                    <strong class="me-auto smallnya_nih">${title}</strong>
+                    <small class="smallnya_nih">Baru saja</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
                 <div class="toast-body pt-0 pb-3">
@@ -278,45 +278,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // === 10. Form Submissions (Contact & Newsletter) ===
     const contactForm = document.getElementById("contactForm");
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            // 1. Tahan browser agar tidak refresh halaman
-            e.preventDefault();
-            
-            // 2. Cek validasi bootstrap terlebih dahulu
-            if (!contactForm.checkValidity()) {
-                e.stopPropagation();
-                contactForm.classList.add("was-validated");
-                return;
-            }
-    
-            // 3. Ambil data asli yang diinput oleh user di form Anda
-            const name = document.getElementById("contactName").value;
-            const email = document.getElementById("contactEmail").value;
-            const phone = document.getElementById("contactPhone").value;
-            const message = document.getElementById("contactMessage").value;
-    
-            // 4. Atur Nomor WhatsApp Anda (Gunakan kode negara, misal 62 untuk Indonesia)
-            const nomorWA = "6282123438174"; // <-- GANTI DENGAN NOMOR WHATSAPP ANDA SENDIRI!
-    
-            // 5. Susun teks format pesan otomatisnya
-            const teksPesan = `Halo Rempeyek Bumi 🍃\n\nAda pesan baru dari formulir kontak:\n• *Nama Lengkap:* ${name}\n• *Alamat Email:* ${email}\n• *Nomor HP/WA:* ${phone}\n• *Isi Pesan:* ${message}`;
-            
-            // 6. Buka tab baru menuju WhatsApp dengan pesan otomatis tersebut
-            const waUrl = `https://wa.me/${nomorWA}?text=${encodeURIComponent(teksPesan)}`;
-            window.open(waUrl, "_blank");
-    
-            // 7. Tampilkan toast pemberitahuan sukses ke user & bersihkan form
-            showToast(
-                "Mengarahkan ke WhatsApp",
-                `Terima kasih <strong>${name}</strong>, chat WhatsApp akan segera terbuka untuk mengirim pesan Anda.`,
-                "success"
-            );
-            
-            contactForm.reset();
-            contactForm.classList.remove("was-validated");
-        });
-    }
+if (contactForm) {
+    contactForm.addEventListener("submit", (e) => {
+        // 1. Tahan browser agar tidak refresh halaman
+        e.preventDefault();
+        
+        // 2. Cek validasi bootstrap terlebih dahulu
+        if (!contactForm.checkValidity()) {
+            e.stopPropagation();
+            contactForm.classList.add("was-validated");
+            return;
+        }
+
+        // 3. Ambil data asli yang diinput oleh user
+        const name = document.getElementById("contactName").value;
+        const email = document.getElementById("contactEmail").value;
+        const phone = document.getElementById("contactPhone").value;
+        const message = document.getElementById("contactMessage").value;
+
+        // 4. Nomor WhatsApp Anda
+        const nomorWA = "6282123438174"; 
+
+        // 5. Susun teks format pesan otomatis
+        const teksPesan = `Halo Rempeyek Bumi 🍃\n\nAda pesan baru dari formulir kontak:\n• *Nama Lengkap:* ${name}\n• *Alamat Email:* ${email}\n• *Nomor HP/WA:* ${phone}\n• *Isi Pesan:* ${message}`;
+        
+        // 6. Tampilkan toast pemberitahuan sukses terlebih dahulu
+        showToast(
+            "Membuka WhatsApp",
+            `Terima kasih <strong>${name}</strong>, pesan Anda sedang diteruskan langsung ke WhatsApp kami.`,
+            "success"
+        );
+
+        // 7. Reset form sebelum dialihkan agar kembali bersih
+        contactForm.reset();
+        contactForm.classList.remove("was-validated");
+
+        // 8. KUNCI UTAMA: Gunakan API WhatsApp dan langsung timpa lokasi halaman (tanpa window.open / tab baru)
+        // Ini akan langsung memicu HP/Laptop membuka aplikasi WA seketika
+        setTimeout(() => {
+            window.location.href = `https://api.whatsapp.com/send?phone=${nomorWA}&text=${encodeURIComponent(teksPesan)}`;
+        }, 500); // Diberi jeda 0.5 detik agar user sempat melihat Toast suksesnya
+    });
+}
 
     const newsletterForm = document.getElementById("newsletterForm");
     if (newsletterForm) {
